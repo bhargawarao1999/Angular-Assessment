@@ -1,0 +1,5 @@
+[
+    { "empId":101,"empName":"Suresh","empSal":"30000"},
+    { "empId":102,"empName":"Ramesh","empSal":"20000"},
+    { "empId":103,"empName":"Namresh","empSal":"15000"}
+]

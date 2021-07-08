@@ -1,0 +1,32 @@
+<h2> Employee 2 </h2>
+<table class="table table-bordered">
+    
+    <tr>
+        <th scope="col">
+            <p>Search employee:</p>
+        </th>
+        <td><input type="text" class="form-control" placeholder="Search"[(ngModel)]="searchString" /></td>
+        <th><p>Sort Data:</p></th>
+        <td scope="col">
+             <select class="form-control" [value]="'a-z'" [(ngModel)]="sortString">
+                <option [value]="'a-z'">A-Z</option>
+                <option [value]="'z-a'">Z-A</option>
+                <option [value]="'low'">Low Salary to High Salary</option>
+                <option [value]="'high'">High Salary-Low Salary</option>
+            </select>
+        </td>
+    </tr>
+</table>
+<table class="table table-bordered">
+    <tr>
+        <th scope="col">Employee Id</th>
+        <th scope="col">Employee Name</th>
+        <th scope="col">Employee Salary</th>
+    </tr>
+    <tr appEmployee *ngFor='let employee of employees| search:searchString | sort:sortString'>
+
+        <td scope="row">{{employee.empId}}</td>
+        <td> {{employee.empName | titlecase}} </td>
+        <td> {{employee.empSal | currency:'INR'}} </td>
+    </tr>
+</table>
